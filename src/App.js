@@ -1,6 +1,7 @@
-import React from "react";
+// import React from "react";
 // import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses";
+import NewExpense from './components/NewExpense';
 function App() {
   const expenses = [
     {
@@ -27,9 +28,23 @@ function App() {
     },
   ];
 
+  // const expenseListHandler = (expense) => {
+  //   expenses.push(expense);
+  // };
+
+  // const [expenseList,expenseListHandler] = useState(expenses);
+
+
+
+  const addExpenseHandler = (expense) => {
+    console.log(expense);
+    expenses.push(expense);
+  };
+
   return (
     <div>
       <h2>Let's Get Started</h2>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses}/>
       {/* <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}/>
       <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} date={expenses[1].date}/>
